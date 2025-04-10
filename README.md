@@ -1,14 +1,5 @@
 # FDE Project
 
-<style>
-body {
-   /* font-family: "Times New Roman"; */
-}
-.times-new-roman-mono {
-    font-family: monospace;
-}
-</style>
-
 The FDE midterm project is a comprehensive experiment that encompasses the entire FPGA workflow, from writing RTL (Register Transfer Level) code to digital synthesis, from generating the gate file (an artifact of synthesis) to creating the bitstream, and finally, downloading the bitstream onto the FDP FPGA chip.
 
 As a student with no background in microelectronics, all these workflows, tools, and concepts were initially foreign to me. The process of writing RTL code and performing logic synthesis to produce the gate-level code seemed daunting at first, as I had no understanding of what those terms even meant.
@@ -310,7 +301,7 @@ Here is the constraints file \(.xml\) for the name display lab:
 > Why? Consult the VeriComm documentation manual and `VERICOMM_MAP_EXT.xlsx`, especially the section about the mapping of VeriComm pins to the physical FPGA pins.
 
 Organizing the raw 64-bit data into groups of bytes:
-<div class="times-new-roman-mono">
+<div style="font-family: monospace">
 
 | 4 | 3 | 2 | 1 |
 | - | - | - | - |
