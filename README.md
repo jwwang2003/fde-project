@@ -361,6 +361,7 @@ it is realistic for about two-thirds of the raw throughput,
 or $330 \text{Mbps}$ \($3.2*10^8 \text{bits/second}$\) to transmit to an application.
 
 $$
+
 \frac{3.2*10^8 \text{bits}}
 {second} \cdot
 \frac{1}
@@ -371,6 +372,7 @@ $$
 \approx
 \frac{23,000}
 {second}
+
 $$
 
 In other words, we can populate the FIFO 23,000 times per second.
