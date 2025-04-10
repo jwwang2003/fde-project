@@ -1,0 +1,58 @@
+﻿VeriComm FPGA IO Pins VeriComm FPGA IO Pins,,,,,,,,GPIO Pins,,,,,,,,,
+Input,,Output,,,,,,J7,,,,J8,,,,,
+VeriComm,Physical Pin,VeriComm,Physical Pin,,30 MHz Clock Source ,External Clock,,FPGA IO Pin,Location,FPGA IO Pin,Location,FPGA IO Pin,Location,FPGA IO Pin,Location,FPGA IO Pin Location | Location FPGA IO Pin,FPGA IO Pin Location | Location FPGA IO Pin
+clk,P77,,,clk P77,FPGA IO Pin ,FPGA IO Pin,,LED D0,1,P147,2,P147,1,P146,2,LED D0 1 2 P147,P147 1 2 P146
+input 0,P151,output 0,P7,input0 P151 Output0 P7,P185,P80,,LED D1,3,P145,4,P145,3,N.C.,4,LED D1 3 4 P145,P145 3 4 N.C.
+input 1,P148,output 1,P6,input1 P148 Output1 P6,,,,LED D2,5,P141,6,P141,5,N.C.,6,LED D2 5 6 P141,P141 5 6 N.C.
+input 2,P150,output 2,P5,input2 P150 Output2 P5,,,,LED D3,7,P140,8,P140,7,N.C.,8,LED D3 7 8 P140,P140 7 8 N.C.
+input 3,P152,output 3,P4,input3 P152 Output3 P4,,,,LED D4 ,9,P139,10,P139,9,N.C.,10,LED D4 9 10 P139,P139 9 10 N.C.
+input 4,P160,output 4,P9,input4 P160 Output4 P9,,,,+5V,11,+5V,12,+5V,11,GND,12,+5V 11 12 +5V,+5V 11 12 GND
+input 5,P161,output 5,P8,input5 P161 Output5 P8,,,,LED D5,13,P138,14,P138,13,N.C.,14,LED D5 13 14 P138,P138 13 14 N.C.
+input 6,P162,output 6,P16,input6 P162 Output6 P16,,,,LED D6,15,P136,16,P136,15,N.C.,16,LED D6 15 16 P136,P136 15 16 N.C.
+input 7,P163,output 7,P15,input7 P163 Output7 P15,,,,LED D7,17,P135,18,P135,17,N.C.,18,LED D7 17 18 P135,P135 17 18 N.C.
+input 8,P164,output 8,P11,input8 P164 Output8 P11,,,,SW1.1,19,P134,20,P134,19,N.C.,20,SW1.1 19 20 P134,P134 19 20 N.C.
+input 9,P165,output 9,P10,input9 P165 Output9 P10,,,,SW1.2,21,P133,22,P133,21,N.C.,22,SW1.2 21 22 P133,P133 21 22 N.C.
+input 10,P166,output 10,P20,input10 P166 Output10 P20,,,,BT1,23,P132,24,P132,23,N.C.,24,BT1 23 24 P132,P132 23 24 N.C.
+input 11,P169,output 11,P18,input11 P169 Output11 P18,,,,BT2,25,P129,26,P129,25,N.C.,26,BT2 25 26 P129,P129 25 26 N.C.
+input 12,P173,output 12,P17,input12 P173 Output12 P17,,,,GND,27,P127,28,P127,27,N.C.,28,GND 27 28 P127,P127 27 28 N.C.
+input 13,P174,output 13,P22,input13 P174 Output13 P22,,,,+3.3V,29,+3.3V,30,+3.3V,29,GND,30,+3.3V 29 30 +3.3V,+3.3V 29 30 GND
+input 14,P175,output 14,P21,input14 P175 Output14 P21,,,,GND,31,P126,32,P126,31,N.C.,32,GND 31 32 P126,P126 31 32 N.C.
+input 15,P191,output 15,P23,input15 P191 Output15 P23,,,,GND,33,P125,34,P125,33,N.C.,34,GND 33 34 P125,P125 33 34 N.C.
+input 16,P120,output 16,P44,input16 P120 Output16 P44,,,,GND,35,P123,36,P123,35,N.C.,36,GND 35 36 P123,P123 35 36 N.C.
+input 17,P116,output 17,P45,input17 P116 Output17 P45,,,,GND,37,P122,38,P122,37,N.C.,38,GND 37 38 P122,P122 37 38 N.C.
+input 18,P115,output 18,P46,input18 P115 Output18 P46,,,,GND,39,P121,40,P121,39,N.C.,40,GND 39 40 P121,P121 39 40 N.C.
+input 19,P114,output 19,P43,input19 P114 Output19 P43,,,,,,,,,,,,,
+input 20,P113,output 20,P40,input20 P113 Output20 P40,,,,,,,,,,,,,
+input 21,P112,output 21,P41,input21 P112 Output21 P41,,,,,,,,,,,,,
+input 22,P111,output 22,P42,input22 P111 Output22 P42,,,,,,,,,,,,,
+input 23,P108,output 23,P33,input23 P108 Output23 P33,,,,,,,,,,,,,
+input 24,P102,output 24,P34,input24 P102 Output24 P34,,,,,,,,,,,,,
+input 25,P101,output 25,P35,input25 P101 Output25 P35,,,,,,,,,,,,,
+input 26,P100,output 26,P36,input26 P100 Output26 P36,,,,,,,,,,,,,
+input 27,P97,output 27,P30,input27 P97 Output27 P30,,,,,,,,,,,,,
+input 28,P96,output 28,P31,input28 P96 Output28 P31,,,,,,,,,,,,,
+input 29,P95,output 29,P24,input29 P95 Output29 P24,,,,,,,,,,,,,
+input 30,P89,output 30,P27,input30 P89 Output30 P27,,,,,,,,,,,,,
+input 31,P88,output 31,P29,input31 P88 Output31 P29,,,,,,,,,,,,,
+input 32,P87,output 32,P110,input32 P87 Output32 P110,,,,,,,,,,,,,
+input 33,P86,output 33,P109,input33 P86 Output33 P109,,,,,,,,,,,,,
+input 34,P81,output 34,P99,input34 P81 Output34 P99,,,,,,,,,,,,,
+input 35,P75,output 35,P98,input35 P75 Output35 P98,,,,,,,,,,,,,
+input 36,P74,output 36,P94,input36 P74 Output36 P94,,,,,,,,,,,,,
+input 37,P70,output 37,P93,input37 P70 Output37 P93,,,,,,,,,,,,,
+input 38,P69,output 38,P84,input38 P69 Output38 P84,,,,,,,,,,,,,
+input 39,P68,output 39,P83,input39 P68 Output39 P83,,,,,,,,,,,,,
+input 40,P64,output 40,P82,input40 P64 Output40 P82,,,,,,,,,,,,,
+input 41,P62,output 41,P73,input41 P62 Output41 P73,,,,,,,,,,,,,
+input 42,P61,output 42,P71,input42 P61 Output42 P71,,,,,,,,,,,,,
+input 43,P58,output 43,P63,input43 P58 Output43 P63,,,,,,,,,,,,,
+input 44,P57,output 44,P60,input44 P57 Output44 P60,,,,,,,,,,,,,
+input 45,P49,output 45,P59,input45 P49 Output45 P59,,,,,,,,,,,,,
+input 46,P47,output 46,P56,input46 P47 Output46 P56,,,,,,,,,,,,,
+input 47,P48,output 47,P55,input47 P48 Output47 P55,,,,,,,,,,,,,
+input 48,P192,output 48,P167,input48 P192 Output48 P167,,,,,,,,,,,,,
+input 49,P193,output 49,P168,input49 P193 Output49 P168,,,,,,,,,,,,,
+input 50,P199,output 50,P176,input50 P199 Output50 P176,,,,,,,,,,,,,
+input 51,P200,output 51,P187,input51 P200 Output51 P187,,,,,,,,,,,,,
+input 52,P201,output 52,P189,input52 P201 Output52 P189,,,,,,,,,,,,,
+input 53,P202,output 53,P194,input53 P202 Output53 P194,,,,,,,,,,,,,
