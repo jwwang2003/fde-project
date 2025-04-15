@@ -1,0 +1,30 @@
+<design name="lab1">
+  <port name="clk_cnt[0]" position="P151"/>
+<port name="clk_cnt[1]" position="P148"/>
+<port name="clk_cnt[2]" position="P150"/>
+<port name="clk_cnt[3]" position="P152"/>
+<port name="clk_cnt[4]" position="P160"/>
+<port name="clk_cnt[5]" position="P161"/>
+<port name="clk_cnt[6]" position="P162"/>
+<port name="clk_cnt[7]" position="P163"/>
+<port name="clk_cnt[8]" position="P164"/>
+<port name="clk_cnt[9]" position="P165"/>
+<port name="clk_cnt[10]" position="P166"/>
+<port name="clk_cnt[11]" position="P169"/>
+<port name="clk_cnt[12]" position="P173"/>
+<port name="clk_cnt[13]" position="P174"/>
+<port name="clk_cnt[14]" position="P175"/>
+<port name="clk_cnt[15]" position="P191"/>
+<port name="clk" position="P185"/>
+<port name="rst" position="P120"/>
+<port name="nReset" position="P116"/>
+<port name="ena" position="P115"/>
+<port name="scl_in" position="P147"/>
+<port name="scl_oen" position="P145"/>
+<port name="scl_o" position="P141"/>
+<port name="slave_wait" position="P5"/>
+<port name="scl_sSignal" position="P6"/>
+<port name="scl_dSignal" position="P7"/>
+<port name="scl_doen" position="P8"/>
+<port name="test" position="P9"/>
+    </design>

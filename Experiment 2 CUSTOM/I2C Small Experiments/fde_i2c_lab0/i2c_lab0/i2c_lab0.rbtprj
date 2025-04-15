@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Rabbit Project File-->
+<project name="i2c_lab0" constraint="../lab0_cons.xml" bitstream="../fde_i2c_lab0_dc_bit.bit">
+    <panel grid_width="50" grid_height="50"/>
+    <components>
+        <component type="LED" name="Data Line Reading" grid_x="4" grid_y="2">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P168" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="RST" grid_x="2" grid_y="0">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P151" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="I2C Hold" grid_x="2" grid_y="2">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P150" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+    </components>
+</project>

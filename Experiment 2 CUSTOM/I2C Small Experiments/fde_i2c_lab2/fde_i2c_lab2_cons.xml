@@ -1,0 +1,37 @@
+<design name="lab2">
+  <port name="clk_cnt[0]" position="P151"/>
+<port name="clk_cnt[1]" position="P148"/>
+<port name="clk_cnt[2]" position="P150"/>
+<port name="clk_cnt[3]" position="P152"/>
+<port name="clk_cnt[4]" position="P160"/>
+<port name="clk_cnt[5]" position="P161"/>
+<port name="clk_cnt[6]" position="P162"/>
+<port name="clk_cnt[7]" position="P163"/>
+<port name="clk_cnt[8]" position="P164"/>
+<port name="clk_cnt[9]" position="P165"/>
+<port name="clk_cnt[10]" position="P166"/>
+<port name="clk_cnt[11]" position="P169"/>
+<port name="clk_cnt[12]" position="P173"/>
+<port name="clk_cnt[13]" position="P174"/>
+<port name="clk_cnt[14]" position="P175"/>
+<port name="clk_cnt[15]" position="P191"/>
+<port name="cmd[0]" position="P120"/>
+<port name="cmd[1]" position="P116"/>
+<port name="cmd[2]" position="P115"/>
+<port name="cmd[3]" position="P114"/>
+<port name="clk" position="P185"/>
+<port name="rst" position="P113"/>
+<port name="nReset" position="P112"/>
+<port name="ena" position="P111"/>
+<port name="din" position="P108"/>
+<port name="sda_i" position="P140"/>
+<port name="scl_i" position="P147"/>
+<port name="cmd_ack" position="P7"/>
+<port name="busy" position="P6"/>
+<port name="al" position="P5"/>
+<port name="dout" position="P4"/>
+<port name="sda_OEN" position="P139"/>
+<port name="sda_o" position="P138"/>
+<port name="scl_OEN" position="P145"/>
+<port name="scl_o" position="P141"/>
+    </design>

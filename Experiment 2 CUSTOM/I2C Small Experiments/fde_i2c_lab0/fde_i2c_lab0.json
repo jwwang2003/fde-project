@@ -1,0 +1,1 @@
+{"name":"fde_i2c_lab0","file_lists":[{"name":"lab0.v","path":"E:\\FDU\\FPGA Course\\I2C Project\\fde_i2c_lab0\\lab0.v","type":"verilog"},{"name":"lab0_cons.xml","path":"E:\\FDU\\FPGA Course\\I2C Project\\fde_i2c_lab0\\lab0_cons.xml","type":"constraint"}],"target_device":"FDP3P7","settings":{"route":{"mode":"Direct Search"},"place":{"mode":"Timing Driven"}}}

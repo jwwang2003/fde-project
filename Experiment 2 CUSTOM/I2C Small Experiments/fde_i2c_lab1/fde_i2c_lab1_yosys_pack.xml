@@ -1,0 +1,2290 @@
+<design name="lab1">
+	<external name="cell_lib">
+		<module name="NAND2" type="COMB">
+			<property name="truthtable" value="0-|-0"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR2B" type="COMB">
+			<property name="truthtable" value="10"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NAND2B" type="COMB">
+			<property name="truthtable" value="1-|-0"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI211" type="COMB">
+			<property name="truthtable" value="00--|--0-|---0"/>
+			<port name="A0" direction="input"/>
+			<port name="A1" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="C0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI21" type="COMB">
+			<property name="truthtable" value="00-|--0"/>
+			<port name="A0" direction="input"/>
+			<port name="A1" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI2BB2" type="COMB">
+			<property name="truthtable" value="11--|--00"/>
+			<port name="A0N" direction="input"/>
+			<port name="A1N" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="B1" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="AOI2BB1" type="COMB">
+			<property name="truthtable" value="1-0|-10"/>
+			<port name="A0N" direction="input"/>
+			<port name="A1N" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR2" type="COMB">
+			<property name="truthtable" value="00"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="AOI21" type="COMB">
+			<property name="truthtable" value="0-0|-00"/>
+			<port name="A0" direction="input"/>
+			<port name="A1" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="MX2" type="COMB">
+			<property name="truthtable" value="1-0|-11"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="S0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI2BB1" type="COMB">
+			<property name="truthtable" value="11-|--0"/>
+			<port name="A0N" direction="input"/>
+			<port name="A1N" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OR2" type="COMB">
+			<property name="truthtable" value="1-|-1"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI31" type="COMB">
+			<property name="truthtable" value="000-|---0"/>
+			<port name="A0" direction="input"/>
+			<port name="A1" direction="input"/>
+			<port name="A2" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR3B" type="COMB">
+			<property name="truthtable" value="100"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="C" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR3" type="COMB">
+			<property name="truthtable" value="000"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="C" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+	</external>
+	<external name="template_work_lib">
+		<module name="slice" type="SLICE">
+			<port name="CIN" direction="input"/>
+			<port name="SR" direction="input"/>
+			<port name="CLK" direction="input"/>
+			<port name="CE" direction="input"/>
+			<port name="BX" direction="input"/>
+			<port name="F1" direction="input"/>
+			<port name="F2" direction="input"/>
+			<port name="F3" direction="input"/>
+			<port name="F4" direction="input"/>
+			<port name="F5IN" direction="input"/>
+			<port name="BY" direction="input"/>
+			<port name="G1" direction="input"/>
+			<port name="G2" direction="input"/>
+			<port name="G3" direction="input"/>
+			<port name="G4" direction="input"/>
+			<port name="XQ" direction="output"/>
+			<port name="X" direction="output"/>
+			<port name="F5" direction="output"/>
+			<port name="XB" direction="output"/>
+			<port name="YQ" direction="output"/>
+			<port name="Y" direction="output"/>
+			<port name="YB" direction="output"/>
+			<port name="COUT" direction="output"/>
+		</module>
+		<module name="iob" type="IOB">
+			<port name="TRI" direction="input"/>
+			<port name="TRICE" direction="input"/>
+			<port name="OUT" direction="input"/>
+			<port name="OUTCE" direction="input"/>
+			<port name="INCE" direction="input"/>
+			<port name="CLK" direction="input"/>
+			<port name="SR" direction="input"/>
+			<port name="IN" direction="output"/>
+			<port name="IQ" direction="output"/>
+			<port name="PAD" direction="inout"/>
+		</module>
+		<module name="gclk" type="GCLK">
+			<port name="CE" direction="input"/>
+			<port name="IN" direction="input"/>
+			<port name="OUT" direction="output"/>
+		</module>
+		<module name="gclkiob" type="GCLKIOB">
+			<port name="PAD" direction="inout"/>
+			<port name="GCLKOUT" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="lab1" type="GENERIC">
+			<port name="clk" direction="input"/>
+			<port name="ena" direction="input"/>
+			<port name="nReset" direction="input"/>
+			<port name="rst" direction="input"/>
+			<port name="scl_in" direction="input"/>
+			<port name="scl_o" direction="output"/>
+			<port name="scl_oen" direction="output"/>
+			<port name="slave_wait" direction="output"/>
+			<contents>
+				<instance name="U100" moduleRef="NAND2" libraryRef="cell_lib"/>
+				<instance name="U101" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U102" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U103" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U104" moduleRef="OAI211" libraryRef="cell_lib"/>
+				<instance name="U105" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U108" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U109" moduleRef="OAI2BB2" libraryRef="cell_lib"/>
+				<instance name="U110" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U111" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U112" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U113" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U114" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U115" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U116" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U117" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U118" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U119" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U120" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U121" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U122" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U123" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U124" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U125" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U126" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U127" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U128" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U129" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U130" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U131" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U132" moduleRef="NOR2" libraryRef="cell_lib"/>
+				<instance name="U133" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U134" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U135" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U136" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U137" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U138" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U139" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U141" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U142" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U143" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U144" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U145" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U146" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U147" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U148" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U149" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U150" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U151" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U152" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U153" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U154" moduleRef="NOR2" libraryRef="cell_lib"/>
+				<instance name="U155" moduleRef="OAI2BB1" libraryRef="cell_lib"/>
+				<instance name="U156" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U157" moduleRef="OAI2BB1" libraryRef="cell_lib"/>
+				<instance name="U159" moduleRef="OR2" libraryRef="cell_lib"/>
+				<instance name="U160" moduleRef="OAI211" libraryRef="cell_lib"/>
+				<instance name="U161" moduleRef="OAI31" libraryRef="cell_lib"/>
+				<instance name="U162" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U163" moduleRef="NOR2" libraryRef="cell_lib"/>
+				<instance name="U165" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U167" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U168" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U169" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U171" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U172" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U174" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U175" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U176" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U178" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U179" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U181" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U182" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U183" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U185" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U186" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U188" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U189" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U190" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U192" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U193" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U195" moduleRef="AOI21" libraryRef="cell_lib"/>
+				<instance name="U196" moduleRef="OAI21" libraryRef="cell_lib"/>
+				<instance name="U199" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U200" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U201" moduleRef="OAI2BB2" libraryRef="cell_lib"/>
+				<instance name="U202" moduleRef="OAI2BB1" libraryRef="cell_lib"/>
+				<instance name="U203" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U204" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U205" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U207" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U209" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U210" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U211" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U212" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U213" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U214" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U215" moduleRef="NOR3" libraryRef="cell_lib"/>
+				<instance name="U216" moduleRef="AOI2BB1" libraryRef="cell_lib"/>
+				<instance name="U217" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="iSlice__0__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__1__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__2__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__3__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__4__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__5__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__6__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__7__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__8__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__9__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__10__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__11__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__12__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__13__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__14__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__15__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="HIGH"/>
+					<config name="INITY" value="HIGH"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__16__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="HIGH"/>
+					<config name="INITY" value="HIGH"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__17__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="BY"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="0"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="HIGH"/>
+					<config name="INITY" value="HIGH"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__18__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__19__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__20__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__21__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__22__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__23__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__24__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__25__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=~A1"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__26__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__27__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="BX"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="0"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#OFF"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="#OFF"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="HIGH"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__28__" moduleRef="slice" libraryRef="template_work_lib">
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=~A1"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=0"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="ena" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="scl_in" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="rst" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="scl_o" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="scl_oen" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="slave_wait" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="nReset" moduleRef="iob" libraryRef="template_work_lib">
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="iGclk_buf__0__" moduleRef="gclk" libraryRef="template_work_lib">
+					<config name="CEMUX" value="1"/>
+					<config name="DISABLE_ATTR" value="LOW"/>
+					<config name="CE_POWER" value="#OFF"/>
+					<config name="GCLK_BUFFER" value="#OFF"/>
+				</instance>
+				<instance name="clk" moduleRef="gclkiob" libraryRef="template_work_lib">
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="GCLK_BUF" value="#OFF"/>
+					<config name="PAD" value="#OFF"/>
+				</instance>
+				<net name="n133">
+					<portRef name="X" instanceRef="iSlice__21__"/>
+					<portRef name="A" instanceRef="U176"/>
+				</net>
+				<net name="n132">
+					<portRef name="Y" instanceRef="U178"/>
+					<portRef name="B0" instanceRef="U172"/>
+					<portRef name="F1" instanceRef="iSlice__21__"/>
+				</net>
+				<net name="n135">
+					<portRef name="Y" instanceRef="U213"/>
+					<portRef name="A0" instanceRef="U182"/>
+					<portRef name="AN" instanceRef="U212"/>
+					<portRef name="B" instanceRef="U178"/>
+				</net>
+				<net name="n134">
+					<portRef name="Y" instanceRef="U182"/>
+					<portRef name="B" instanceRef="U176"/>
+					<portRef name="B0" instanceRef="U181"/>
+				</net>
+				<net name="n129">
+					<portRef name="Y" instanceRef="U214"/>
+					<portRef name="A0" instanceRef="U175"/>
+					<portRef name="AN" instanceRef="U213"/>
+					<portRef name="B" instanceRef="U171"/>
+				</net>
+				<net name="n128">
+					<portRef name="Y" instanceRef="U175"/>
+					<portRef name="B" instanceRef="U169"/>
+					<portRef name="B0" instanceRef="U174"/>
+				</net>
+				<net name="n131">
+					<portRef name="Y" instanceRef="iSlice__20__"/>
+					<portRef name="A1" instanceRef="U172"/>
+				</net>
+				<net name="n130">
+					<portRef name="Y" instanceRef="U174"/>
+					<portRef name="A0" instanceRef="U172"/>
+				</net>
+				<net name="n141">
+					<portRef name="Y" instanceRef="U212"/>
+					<portRef name="A0" instanceRef="U189"/>
+					<portRef name="AN" instanceRef="U211"/>
+					<portRef name="B" instanceRef="U185"/>
+				</net>
+				<net name="n140">
+					<portRef name="Y" instanceRef="U189"/>
+					<portRef name="B" instanceRef="U183"/>
+					<portRef name="B0" instanceRef="U188"/>
+				</net>
+				<net name="n143">
+					<portRef name="Y" instanceRef="iSlice__22__"/>
+					<portRef name="A1" instanceRef="U186"/>
+				</net>
+				<net name="n142">
+					<portRef name="Y" instanceRef="U188"/>
+					<portRef name="A0" instanceRef="U186"/>
+				</net>
+				<net name="n137">
+					<portRef name="Y" instanceRef="iSlice__21__"/>
+					<portRef name="A1" instanceRef="U179"/>
+				</net>
+				<net name="n136">
+					<portRef name="Y" instanceRef="U181"/>
+					<portRef name="A0" instanceRef="U179"/>
+				</net>
+				<net name="n139">
+					<portRef name="X" instanceRef="iSlice__22__"/>
+					<portRef name="A" instanceRef="U183"/>
+				</net>
+				<net name="n138">
+					<portRef name="Y" instanceRef="U185"/>
+					<portRef name="B0" instanceRef="U179"/>
+					<portRef name="F1" instanceRef="iSlice__22__"/>
+				</net>
+				<net name="n149">
+					<portRef name="Y" instanceRef="iSlice__23__"/>
+					<portRef name="A1" instanceRef="U193"/>
+				</net>
+				<net name="n148">
+					<portRef name="Y" instanceRef="U195"/>
+					<portRef name="A0" instanceRef="U193"/>
+				</net>
+				<net name="n151">
+					<portRef name="Y" instanceRef="U199"/>
+					<portRef name="F1" instanceRef="iSlice__26__"/>
+				</net>
+				<net name="n150">
+					<portRef name="Y" instanceRef="U200"/>
+					<portRef name="A" instanceRef="U199"/>
+					<portRef name="B0" instanceRef="U193"/>
+				</net>
+				<net name="n145">
+					<portRef name="X" instanceRef="iSlice__23__"/>
+					<portRef name="A" instanceRef="U190"/>
+				</net>
+				<net name="n144">
+					<portRef name="Y" instanceRef="U192"/>
+					<portRef name="B0" instanceRef="U186"/>
+					<portRef name="F1" instanceRef="iSlice__23__"/>
+				</net>
+				<net name="n147">
+					<portRef name="Y" instanceRef="U211"/>
+					<portRef name="A0" instanceRef="U196"/>
+					<portRef name="AN" instanceRef="U210"/>
+					<portRef name="B" instanceRef="U192"/>
+				</net>
+				<net name="n146">
+					<portRef name="Y" instanceRef="U196"/>
+					<portRef name="B" instanceRef="U190"/>
+					<portRef name="B0" instanceRef="U195"/>
+				</net>
+				<net name="n157">
+					<portRef name="Y" instanceRef="U109"/>
+					<portRef name="BX" instanceRef="iSlice__3__"/>
+				</net>
+				<net name="n156">
+					<portRef name="Y" instanceRef="U217"/>
+					<portRef name="A1N" instanceRef="U216"/>
+				</net>
+				<net name="n159">
+					<portRef name="Y" instanceRef="U112"/>
+					<portRef name="BX" instanceRef="iSlice__4__"/>
+				</net>
+				<net name="n158">
+					<portRef name="Y" instanceRef="U110"/>
+					<portRef name="BY" instanceRef="iSlice__4__"/>
+				</net>
+				<net name="n153">
+					<portRef name="Y" instanceRef="U210"/>
+					<portRef name="A0N" instanceRef="U203"/>
+					<portRef name="AN" instanceRef="U209"/>
+					<portRef name="B" instanceRef="U200"/>
+				</net>
+				<net name="n152">
+					<portRef name="Y" instanceRef="U203"/>
+					<portRef name="B" instanceRef="U199"/>
+					<portRef name="B0" instanceRef="U202"/>
+				</net>
+				<net name="n155">
+					<portRef name="Y" instanceRef="U209"/>
+					<portRef name="F1" instanceRef="iSlice__28__"/>
+				</net>
+				<net name="n154">
+					<portRef name="X" instanceRef="iSlice__28__"/>
+					<portRef name="A" instanceRef="U100"/>
+					<portRef name="B0" instanceRef="U201"/>
+				</net>
+				<net name="n101">
+					<portRef name="Y" instanceRef="U129"/>
+					<portRef name="A1N" instanceRef="U128"/>
+				</net>
+				<net name="n100">
+					<portRef name="Y" instanceRef="U152"/>
+					<portRef name="A0N" instanceRef="U128"/>
+					<portRef name="AN" instanceRef="U151"/>
+					<portRef name="B" instanceRef="U127"/>
+				</net>
+				<net name="n103">
+					<portRef name="Y" instanceRef="U131"/>
+					<portRef name="A1N" instanceRef="U130"/>
+				</net>
+				<net name="n102">
+					<portRef name="Y" instanceRef="U153"/>
+					<portRef name="A0N" instanceRef="U130"/>
+					<portRef name="AN" instanceRef="U152"/>
+					<portRef name="B" instanceRef="U129"/>
+				</net>
+				<net name="n97">
+					<portRef name="Y" instanceRef="U125"/>
+					<portRef name="A1N" instanceRef="U124"/>
+				</net>
+				<net name="n96">
+					<portRef name="Y" instanceRef="U150"/>
+					<portRef name="A0N" instanceRef="U124"/>
+					<portRef name="AN" instanceRef="U149"/>
+					<portRef name="B" instanceRef="U123"/>
+				</net>
+				<net name="n99">
+					<portRef name="Y" instanceRef="U127"/>
+					<portRef name="A1N" instanceRef="U126"/>
+				</net>
+				<net name="n98">
+					<portRef name="Y" instanceRef="U151"/>
+					<portRef name="A0N" instanceRef="U126"/>
+					<portRef name="AN" instanceRef="U150"/>
+					<portRef name="B" instanceRef="U125"/>
+				</net>
+				<net name="n109">
+					<portRef name="Y" instanceRef="U138"/>
+					<portRef name="AN" instanceRef="U137"/>
+				</net>
+				<net name="n108">
+					<portRef name="Y" instanceRef="U136"/>
+					<portRef name="AN" instanceRef="U135"/>
+				</net>
+				<net name="n111">
+					<portRef name="Y" instanceRef="iSlice__24__"/>
+					<portRef name="A0N" instanceRef="U157"/>
+					<portRef name="A1" instanceRef="U167"/>
+					<portRef name="A1" instanceRef="U174"/>
+					<portRef name="A1" instanceRef="U181"/>
+					<portRef name="A1" instanceRef="U188"/>
+					<portRef name="A1" instanceRef="U195"/>
+					<portRef name="A1N" instanceRef="U202"/>
+					<portRef name="B" instanceRef="U205"/>
+					<portRef name="B0" instanceRef="U160"/>
+				</net>
+				<net name="n110">
+					<portRef name="Y" instanceRef="U141"/>
+					<portRef name="AN" instanceRef="U139"/>
+				</net>
+				<net name="n105">
+					<portRef name="Y" instanceRef="U134"/>
+					<portRef name="A" instanceRef="U132"/>
+				</net>
+				<net name="n104">
+					<portRef name="Y" instanceRef="U154"/>
+					<portRef name="AN" instanceRef="U153"/>
+					<portRef name="B" instanceRef="U131"/>
+					<portRef name="B0" instanceRef="U134"/>
+				</net>
+				<net name="n107">
+					<portRef name="Y" instanceRef="U207"/>
+					<portRef name="B" instanceRef="U100"/>
+					<portRef name="B" instanceRef="U133"/>
+				</net>
+				<net name="n106">
+					<portRef name="Y" instanceRef="U143"/>
+					<portRef name="A0N" instanceRef="U110"/>
+					<portRef name="AN" instanceRef="U133"/>
+					<portRef name="AN" instanceRef="U142"/>
+				</net>
+				<net name="n117">
+					<portRef name="X" instanceRef="iSlice__24__"/>
+					<portRef name="B0" instanceRef="U157"/>
+					<portRef name="B0" instanceRef="U168"/>
+					<portRef name="B0" instanceRef="U175"/>
+					<portRef name="B0" instanceRef="U182"/>
+					<portRef name="B0" instanceRef="U189"/>
+					<portRef name="B0" instanceRef="U196"/>
+				</net>
+				<net name="n116">
+					<portRef name="Y" instanceRef="U157"/>
+					<portRef name="B" instanceRef="U156"/>
+				</net>
+				<net name="n119">
+					<portRef name="X" instanceRef="iSlice__19__"/>
+					<portRef name="A" instanceRef="U163"/>
+					<portRef name="A1" instanceRef="U160"/>
+				</net>
+				<net name="n118">
+					<portRef name="Y" instanceRef="U205"/>
+					<portRef name="AN" instanceRef="U171"/>
+					<portRef name="AN" instanceRef="U178"/>
+					<portRef name="AN" instanceRef="U185"/>
+					<portRef name="AN" instanceRef="U192"/>
+					<portRef name="AN" instanceRef="U200"/>
+					<portRef name="B" instanceRef="U159"/>
+					<portRef name="B" instanceRef="U163"/>
+					<portRef name="B1" instanceRef="U201"/>
+				</net>
+				<net name="n113">
+					<portRef name="Y" instanceRef="U204"/>
+					<portRef name="A0N" instanceRef="U155"/>
+					<portRef name="B0" instanceRef="U203"/>
+					<portRef name="F1" instanceRef="iSlice__24__"/>
+				</net>
+				<net name="n112">
+					<portRef name="Y" instanceRef="U202"/>
+					<portRef name="A1N" instanceRef="U201"/>
+				</net>
+				<net name="n115">
+					<portRef name="Y" instanceRef="iSlice__18__"/>
+					<portRef name="A" instanceRef="U156"/>
+				</net>
+				<net name="n114">
+					<portRef name="Y" instanceRef="U159"/>
+					<portRef name="B0" instanceRef="U155"/>
+					<portRef name="G1" instanceRef="iSlice__18__"/>
+				</net>
+				<net name="n125">
+					<portRef name="Y" instanceRef="iSlice__19__"/>
+					<portRef name="A1" instanceRef="U165"/>
+				</net>
+				<net name="n124">
+					<portRef name="Y" instanceRef="U167"/>
+					<portRef name="A0" instanceRef="U165"/>
+				</net>
+				<net name="n127">
+					<portRef name="X" instanceRef="iSlice__20__"/>
+					<portRef name="A" instanceRef="U169"/>
+				</net>
+				<net name="n126">
+					<portRef name="Y" instanceRef="U171"/>
+					<portRef name="B0" instanceRef="U165"/>
+					<portRef name="F1" instanceRef="iSlice__20__"/>
+				</net>
+				<net name="n121">
+					<portRef name="Y" instanceRef="U163"/>
+					<portRef name="A" instanceRef="U162"/>
+				</net>
+				<net name="n120">
+					<portRef name="Y" instanceRef="U161"/>
+					<portRef name="C0" instanceRef="U160"/>
+				</net>
+				<net name="n123">
+					<portRef name="Y" instanceRef="U215"/>
+					<portRef name="A0" instanceRef="U168"/>
+					<portRef name="AN" instanceRef="U214"/>
+					<portRef name="F1" instanceRef="iSlice__19__"/>
+				</net>
+				<net name="n122">
+					<portRef name="Y" instanceRef="U168"/>
+					<portRef name="B" instanceRef="U162"/>
+					<portRef name="B0" instanceRef="U167"/>
+				</net>
+				<net name="n165">
+					<portRef name="Y" instanceRef="U124"/>
+					<portRef name="BX" instanceRef="iSlice__7__"/>
+				</net>
+				<net name="n164">
+					<portRef name="Y" instanceRef="U122"/>
+					<portRef name="BY" instanceRef="iSlice__7__"/>
+				</net>
+				<net name="n167">
+					<portRef name="Y" instanceRef="U128"/>
+					<portRef name="BX" instanceRef="iSlice__6__"/>
+				</net>
+				<net name="n166">
+					<portRef name="Y" instanceRef="U126"/>
+					<portRef name="BY" instanceRef="iSlice__6__"/>
+				</net>
+				<net name="n161">
+					<portRef name="Y" instanceRef="U116"/>
+					<portRef name="BX" instanceRef="iSlice__14__"/>
+				</net>
+				<net name="n160">
+					<portRef name="Y" instanceRef="U114"/>
+					<portRef name="BY" instanceRef="iSlice__3__"/>
+				</net>
+				<net name="n163">
+					<portRef name="Y" instanceRef="U120"/>
+					<portRef name="BX" instanceRef="iSlice__8__"/>
+				</net>
+				<net name="n162">
+					<portRef name="Y" instanceRef="U118"/>
+					<portRef name="BY" instanceRef="iSlice__8__"/>
+				</net>
+				<net name="n169">
+					<portRef name="Y" instanceRef="U132"/>
+					<portRef name="BX" instanceRef="iSlice__5__"/>
+				</net>
+				<net name="n168">
+					<portRef name="Y" instanceRef="U130"/>
+					<portRef name="BY" instanceRef="iSlice__5__"/>
+				</net>
+				<net name="cnt[14]">
+					<portRef name="XQ" instanceRef="iSlice__0__"/>
+					<portRef name="A0N" instanceRef="U201"/>
+					<portRef name="B" instanceRef="U209"/>
+				</net>
+				<net name="cnt[13]">
+					<portRef name="XQ" instanceRef="iSlice__26__"/>
+					<portRef name="A0N" instanceRef="U202"/>
+					<portRef name="C" instanceRef="U209"/>
+					<portRef name="S0" instanceRef="U199"/>
+				</net>
+				<net name="cnt[12]">
+					<portRef name="YQ" instanceRef="iSlice__10__"/>
+					<portRef name="B" instanceRef="U210"/>
+					<portRef name="G1" instanceRef="iSlice__23__"/>
+				</net>
+				<net name="cnt[11]">
+					<portRef name="XQ" instanceRef="iSlice__10__"/>
+					<portRef name="A0" instanceRef="U195"/>
+					<portRef name="C" instanceRef="U210"/>
+					<portRef name="S0" instanceRef="U190"/>
+				</net>
+				<net name="cnt[10]">
+					<portRef name="YQ" instanceRef="iSlice__9__"/>
+					<portRef name="C" instanceRef="U211"/>
+					<portRef name="G1" instanceRef="iSlice__22__"/>
+				</net>
+				<net name="cnt[9]">
+					<portRef name="YQ" instanceRef="iSlice__13__"/>
+					<portRef name="A0" instanceRef="U188"/>
+					<portRef name="B" instanceRef="U211"/>
+					<portRef name="S0" instanceRef="U183"/>
+				</net>
+				<net name="cnt[8]">
+					<portRef name="XQ" instanceRef="iSlice__13__"/>
+					<portRef name="B" instanceRef="U212"/>
+					<portRef name="G1" instanceRef="iSlice__21__"/>
+				</net>
+				<net name="cnt[7]">
+					<portRef name="YQ" instanceRef="iSlice__12__"/>
+					<portRef name="A0" instanceRef="U181"/>
+					<portRef name="C" instanceRef="U212"/>
+					<portRef name="S0" instanceRef="U176"/>
+				</net>
+				<net name="cnt[6]">
+					<portRef name="XQ" instanceRef="iSlice__12__"/>
+					<portRef name="B" instanceRef="U213"/>
+					<portRef name="G1" instanceRef="iSlice__20__"/>
+				</net>
+				<net name="cnt[5]">
+					<portRef name="YQ" instanceRef="iSlice__11__"/>
+					<portRef name="A0" instanceRef="U174"/>
+					<portRef name="C" instanceRef="U213"/>
+					<portRef name="S0" instanceRef="U169"/>
+				</net>
+				<net name="cnt[4]">
+					<portRef name="XQ" instanceRef="iSlice__11__"/>
+					<portRef name="B" instanceRef="U214"/>
+					<portRef name="G1" instanceRef="iSlice__19__"/>
+				</net>
+				<net name="cnt[3]">
+					<portRef name="YQ" instanceRef="iSlice__1__"/>
+					<portRef name="A0" instanceRef="U167"/>
+					<portRef name="C" instanceRef="U214"/>
+					<portRef name="S0" instanceRef="U162"/>
+				</net>
+				<net name="cnt[2]">
+					<portRef name="XQ" instanceRef="iSlice__1__"/>
+					<portRef name="B" instanceRef="U215"/>
+					<portRef name="B0" instanceRef="U161"/>
+				</net>
+				<net name="cnt[1]">
+					<portRef name="YQ" instanceRef="iSlice__0__"/>
+					<portRef name="A1" instanceRef="U161"/>
+					<portRef name="C" instanceRef="U215"/>
+					<portRef name="S0" instanceRef="U156"/>
+				</net>
+				<net name="cnt[0]">
+					<portRef name="XQ" instanceRef="iSlice__9__"/>
+					<portRef name="A" instanceRef="U159"/>
+					<portRef name="A" instanceRef="U215"/>
+					<portRef name="A0" instanceRef="U161"/>
+					<portRef name="A1N" instanceRef="U155"/>
+					<portRef name="A1N" instanceRef="U157"/>
+				</net>
+				<net name="scl_sSignal">
+					<portRef name="XQ" instanceRef="iSlice__27__"/>
+					<portRef name="B0" instanceRef="U216"/>
+				</net>
+				<net name="net_Buf-pad-slave_wait">
+					<portRef name="YQ" instanceRef="iSlice__14__"/>
+					<portRef name="A0" instanceRef="U160"/>
+					<portRef name="A0N" instanceRef="U216"/>
+					<portRef name="A2" instanceRef="U161"/>
+					<portRef name="AN" instanceRef="U204"/>
+					<portRef name="AN" instanceRef="U205"/>
+					<portRef name="OUT" instanceRef="slave_wait"/>
+				</net>
+				<net name="net_IBuf-clkpad-clk" type="clock">
+					<portRef name="OUT" instanceRef="iGclk_buf__0__"/>
+					<portRef name="CLK" instanceRef="iSlice__0__"/>
+					<portRef name="CLK" instanceRef="iSlice__1__"/>
+					<portRef name="CLK" instanceRef="iSlice__2__"/>
+					<portRef name="CLK" instanceRef="iSlice__3__"/>
+					<portRef name="CLK" instanceRef="iSlice__4__"/>
+					<portRef name="CLK" instanceRef="iSlice__5__"/>
+					<portRef name="CLK" instanceRef="iSlice__6__"/>
+					<portRef name="CLK" instanceRef="iSlice__7__"/>
+					<portRef name="CLK" instanceRef="iSlice__8__"/>
+					<portRef name="CLK" instanceRef="iSlice__9__"/>
+					<portRef name="CLK" instanceRef="iSlice__10__"/>
+					<portRef name="CLK" instanceRef="iSlice__11__"/>
+					<portRef name="CLK" instanceRef="iSlice__12__"/>
+					<portRef name="CLK" instanceRef="iSlice__13__"/>
+					<portRef name="CLK" instanceRef="iSlice__14__"/>
+					<portRef name="CLK" instanceRef="iSlice__15__"/>
+					<portRef name="CLK" instanceRef="iSlice__16__"/>
+					<portRef name="CLK" instanceRef="iSlice__17__"/>
+					<portRef name="CLK" instanceRef="iSlice__26__"/>
+					<portRef name="CLK" instanceRef="iSlice__27__"/>
+				</net>
+				<net name="net_Buf-pad-nReset">
+					<portRef name="IN" instanceRef="nReset"/>
+					<portRef name="SR" instanceRef="iSlice__0__"/>
+					<portRef name="SR" instanceRef="iSlice__1__"/>
+					<portRef name="SR" instanceRef="iSlice__2__"/>
+					<portRef name="SR" instanceRef="iSlice__3__"/>
+					<portRef name="SR" instanceRef="iSlice__4__"/>
+					<portRef name="SR" instanceRef="iSlice__5__"/>
+					<portRef name="SR" instanceRef="iSlice__6__"/>
+					<portRef name="SR" instanceRef="iSlice__7__"/>
+					<portRef name="SR" instanceRef="iSlice__8__"/>
+					<portRef name="SR" instanceRef="iSlice__9__"/>
+					<portRef name="SR" instanceRef="iSlice__10__"/>
+					<portRef name="SR" instanceRef="iSlice__11__"/>
+					<portRef name="SR" instanceRef="iSlice__12__"/>
+					<portRef name="SR" instanceRef="iSlice__13__"/>
+					<portRef name="SR" instanceRef="iSlice__14__"/>
+					<portRef name="SR" instanceRef="iSlice__15__"/>
+					<portRef name="SR" instanceRef="iSlice__16__"/>
+					<portRef name="SR" instanceRef="iSlice__17__"/>
+					<portRef name="SR" instanceRef="iSlice__26__"/>
+					<portRef name="SR" instanceRef="iSlice__27__"/>
+				</net>
+				<net name="net_Buf-pad-rst">
+					<portRef name="IN" instanceRef="rst"/>
+					<portRef name="B" instanceRef="U101"/>
+					<portRef name="B" instanceRef="U108"/>
+					<portRef name="B" instanceRef="U142"/>
+					<portRef name="B" instanceRef="U207"/>
+					<portRef name="F1" instanceRef="iSlice__18__"/>
+				</net>
+				<net name="scl_doen">
+					<portRef name="YQ" instanceRef="iSlice__15__"/>
+					<portRef name="B" instanceRef="U217"/>
+				</net>
+				<net name="net_Buf-pad-ena">
+					<portRef name="IN" instanceRef="ena"/>
+					<portRef name="A1N" instanceRef="U109"/>
+					<portRef name="AN" instanceRef="U207"/>
+				</net>
+				<net name="net_Buf-pad-scl_oen">
+					<portRef name="YQ" instanceRef="iSlice__17__"/>
+					<portRef name="AN" instanceRef="U102"/>
+					<portRef name="AN" instanceRef="U217"/>
+					<portRef name="OUT" instanceRef="scl_oen"/>
+				</net>
+				<net name="net_Buf-pad-scl_in">
+					<portRef name="IN" instanceRef="scl_in"/>
+					<portRef name="AN" instanceRef="U108"/>
+				</net>
+				<net name="n66">
+					<portRef name="Y" instanceRef="U165"/>
+					<portRef name="BX" instanceRef="iSlice__11__"/>
+				</net>
+				<net name="n65">
+					<portRef name="Y" instanceRef="U169"/>
+					<portRef name="BY" instanceRef="iSlice__11__"/>
+				</net>
+				<net name="n68">
+					<portRef name="Y" instanceRef="U160"/>
+					<portRef name="BX" instanceRef="iSlice__1__"/>
+				</net>
+				<net name="n67">
+					<portRef name="Y" instanceRef="U162"/>
+					<portRef name="BY" instanceRef="iSlice__1__"/>
+				</net>
+				<net name="n62">
+					<portRef name="Y" instanceRef="U179"/>
+					<portRef name="BX" instanceRef="iSlice__13__"/>
+				</net>
+				<net name="n61">
+					<portRef name="Y" instanceRef="U183"/>
+					<portRef name="BY" instanceRef="iSlice__13__"/>
+				</net>
+				<net name="n64">
+					<portRef name="Y" instanceRef="U172"/>
+					<portRef name="BX" instanceRef="iSlice__12__"/>
+				</net>
+				<net name="n63">
+					<portRef name="Y" instanceRef="U176"/>
+					<portRef name="BY" instanceRef="iSlice__12__"/>
+				</net>
+				<net name="n77">
+					<portRef name="X" instanceRef="iSlice__18__"/>
+					<portRef name="B" instanceRef="U102"/>
+					<portRef name="B" instanceRef="U103"/>
+					<portRef name="B" instanceRef="U135"/>
+					<portRef name="B" instanceRef="U137"/>
+					<portRef name="B" instanceRef="U139"/>
+					<portRef name="B0" instanceRef="U104"/>
+				</net>
+				<net name="n74">
+					<portRef name="Y" instanceRef="U135"/>
+					<portRef name="BX" instanceRef="iSlice__16__"/>
+				</net>
+				<net name="n79">
+					<portRef name="X" instanceRef="iSlice__25__"/>
+					<portRef name="A1" instanceRef="U104"/>
+				</net>
+				<net name="n78">
+					<portRef name="Y" instanceRef="iSlice__25__"/>
+					<portRef name="A0" instanceRef="U104"/>
+				</net>
+				<net name="n70">
+					<portRef name="Y" instanceRef="U155"/>
+					<portRef name="BX" instanceRef="iSlice__9__"/>
+				</net>
+				<net name="n69">
+					<portRef name="Y" instanceRef="U156"/>
+					<portRef name="BY" instanceRef="iSlice__0__"/>
+				</net>
+				<net name="n73">
+					<portRef name="Y" instanceRef="U137"/>
+					<portRef name="BY" instanceRef="iSlice__16__"/>
+				</net>
+				<net name="n72">
+					<portRef name="Y" instanceRef="U139"/>
+					<portRef name="BX" instanceRef="iSlice__17__"/>
+				</net>
+				<net name="n85">
+					<portRef name="Y" instanceRef="U113"/>
+					<portRef name="A1N" instanceRef="U112"/>
+				</net>
+				<net name="n84">
+					<portRef name="Y" instanceRef="U144"/>
+					<portRef name="A0N" instanceRef="U112"/>
+					<portRef name="AN" instanceRef="U143"/>
+					<portRef name="B" instanceRef="U111"/>
+				</net>
+				<net name="n87">
+					<portRef name="Y" instanceRef="U115"/>
+					<portRef name="A1N" instanceRef="U114"/>
+				</net>
+				<net name="n86">
+					<portRef name="Y" instanceRef="U145"/>
+					<portRef name="A0N" instanceRef="U114"/>
+					<portRef name="AN" instanceRef="U144"/>
+					<portRef name="B" instanceRef="U113"/>
+				</net>
+				<net name="n81">
+					<portRef name="Y" instanceRef="U133"/>
+					<portRef name="B" instanceRef="U132"/>
+					<portRef name="B0" instanceRef="U110"/>
+					<portRef name="B0" instanceRef="U112"/>
+					<portRef name="B0" instanceRef="U114"/>
+					<portRef name="B0" instanceRef="U116"/>
+					<portRef name="B0" instanceRef="U118"/>
+					<portRef name="B0" instanceRef="U120"/>
+					<portRef name="B0" instanceRef="U122"/>
+					<portRef name="B0" instanceRef="U124"/>
+					<portRef name="B0" instanceRef="U126"/>
+					<portRef name="B0" instanceRef="U128"/>
+					<portRef name="B0" instanceRef="U130"/>
+					<portRef name="B1" instanceRef="U109"/>
+				</net>
+				<net name="n80">
+					<portRef name="Y" instanceRef="U105"/>
+					<portRef name="C0" instanceRef="U104"/>
+				</net>
+				<net name="n83">
+					<portRef name="Y" instanceRef="U111"/>
+					<portRef name="A1N" instanceRef="U110"/>
+				</net>
+				<net name="n82">
+					<portRef name="Y" instanceRef="U142"/>
+					<portRef name="A0N" instanceRef="U109"/>
+					<portRef name="S0" instanceRef="U136"/>
+					<portRef name="S0" instanceRef="U138"/>
+					<portRef name="S0" instanceRef="U141"/>
+				</net>
+				<net name="n93">
+					<portRef name="Y" instanceRef="U121"/>
+					<portRef name="A1N" instanceRef="U120"/>
+				</net>
+				<net name="n92">
+					<portRef name="Y" instanceRef="U148"/>
+					<portRef name="A0N" instanceRef="U120"/>
+					<portRef name="AN" instanceRef="U147"/>
+					<portRef name="B" instanceRef="U119"/>
+				</net>
+				<net name="n95">
+					<portRef name="Y" instanceRef="U123"/>
+					<portRef name="A1N" instanceRef="U122"/>
+				</net>
+				<net name="n94">
+					<portRef name="Y" instanceRef="U149"/>
+					<portRef name="A0N" instanceRef="U122"/>
+					<portRef name="AN" instanceRef="U148"/>
+					<portRef name="B" instanceRef="U121"/>
+				</net>
+				<net name="n89">
+					<portRef name="Y" instanceRef="U117"/>
+					<portRef name="A1N" instanceRef="U116"/>
+				</net>
+				<net name="n88">
+					<portRef name="Y" instanceRef="U146"/>
+					<portRef name="A0N" instanceRef="U116"/>
+					<portRef name="AN" instanceRef="U145"/>
+					<portRef name="B" instanceRef="U115"/>
+				</net>
+				<net name="n91">
+					<portRef name="Y" instanceRef="U119"/>
+					<portRef name="A1N" instanceRef="U118"/>
+				</net>
+				<net name="n90">
+					<portRef name="Y" instanceRef="U147"/>
+					<portRef name="A0N" instanceRef="U118"/>
+					<portRef name="AN" instanceRef="U146"/>
+					<portRef name="B" instanceRef="U117"/>
+				</net>
+				<net name="scl_tbuf/N50">
+					<portRef name="Y" instanceRef="U104"/>
+					<portRef name="BX" instanceRef="iSlice__27__"/>
+				</net>
+				<net name="scl_tbuf/N52">
+					<portRef name="Y" instanceRef="U103"/>
+					<portRef name="BY" instanceRef="iSlice__17__"/>
+				</net>
+				<net name="scl_tbuf/fSignal[1]">
+					<portRef name="YQ" instanceRef="iSlice__16__"/>
+					<portRef name="A" instanceRef="U138"/>
+					<portRef name="A0" instanceRef="U105"/>
+					<portRef name="G1" instanceRef="iSlice__25__"/>
+				</net>
+				<net name="scl_tbuf/fSignal[0]">
+					<portRef name="XQ" instanceRef="iSlice__16__"/>
+					<portRef name="A" instanceRef="U136"/>
+					<portRef name="B" instanceRef="U141"/>
+					<portRef name="B0" instanceRef="U105"/>
+				</net>
+				<net name="scl_en">
+					<portRef name="XQ" instanceRef="iSlice__15__"/>
+					<portRef name="AN" instanceRef="U103"/>
+				</net>
+				<net name="N3">
+					<portRef name="Y" instanceRef="U216"/>
+					<portRef name="BY" instanceRef="iSlice__14__"/>
+				</net>
+				<net name="scl_tbuf/N53">
+					<portRef name="Y" instanceRef="U102"/>
+					<portRef name="BY" instanceRef="iSlice__15__"/>
+				</net>
+				<net name="N7">
+					<portRef name="Y" instanceRef="U100"/>
+					<portRef name="A1" instanceRef="U168"/>
+					<portRef name="A1" instanceRef="U175"/>
+					<portRef name="A1" instanceRef="U182"/>
+					<portRef name="A1" instanceRef="U189"/>
+					<portRef name="A1" instanceRef="U196"/>
+					<portRef name="A1N" instanceRef="U203"/>
+					<portRef name="B" instanceRef="U204"/>
+					<portRef name="BX" instanceRef="iSlice__15__"/>
+					<portRef name="G1" instanceRef="iSlice__24__"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[4]">
+					<portRef name="YQ" instanceRef="iSlice__6__"/>
+					<portRef name="AN" instanceRef="U127"/>
+					<portRef name="B" instanceRef="U151"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[3]">
+					<portRef name="XQ" instanceRef="iSlice__6__"/>
+					<portRef name="AN" instanceRef="U129"/>
+					<portRef name="B" instanceRef="U152"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[6]">
+					<portRef name="YQ" instanceRef="iSlice__7__"/>
+					<portRef name="AN" instanceRef="U123"/>
+					<portRef name="B" instanceRef="U149"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[5]">
+					<portRef name="XQ" instanceRef="iSlice__7__"/>
+					<portRef name="AN" instanceRef="U125"/>
+					<portRef name="B" instanceRef="U150"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[0]">
+					<portRef name="XQ" instanceRef="iSlice__3__"/>
+					<portRef name="A" instanceRef="U154"/>
+					<portRef name="A1" instanceRef="U134"/>
+					<portRef name="B0" instanceRef="U109"/>
+				</net>
+				<net name="scl_tbuf/fSignal[2]">
+					<portRef name="XQ" instanceRef="iSlice__17__"/>
+					<portRef name="A" instanceRef="U141"/>
+					<portRef name="A1" instanceRef="U105"/>
+					<portRef name="F1" instanceRef="iSlice__25__"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[2]">
+					<portRef name="YQ" instanceRef="iSlice__5__"/>
+					<portRef name="AN" instanceRef="U131"/>
+					<portRef name="B" instanceRef="U153"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[1]">
+					<portRef name="XQ" instanceRef="iSlice__5__"/>
+					<portRef name="A0" instanceRef="U134"/>
+					<portRef name="B" instanceRef="U154"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[12]">
+					<portRef name="YQ" instanceRef="iSlice__4__"/>
+					<portRef name="AN" instanceRef="U111"/>
+					<portRef name="B" instanceRef="U143"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[11]">
+					<portRef name="XQ" instanceRef="iSlice__4__"/>
+					<portRef name="AN" instanceRef="U113"/>
+					<portRef name="B" instanceRef="U144"/>
+				</net>
+				<net name="scl_tbuf/N5">
+					<portRef name="Y" instanceRef="U108"/>
+					<portRef name="BX" instanceRef="iSlice__2__"/>
+				</net>
+				<net name="scl_tbuf/N6">
+					<portRef name="Y" instanceRef="U101"/>
+					<portRef name="BY" instanceRef="iSlice__2__"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[8]">
+					<portRef name="YQ" instanceRef="iSlice__8__"/>
+					<portRef name="AN" instanceRef="U119"/>
+					<portRef name="B" instanceRef="U147"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[7]">
+					<portRef name="XQ" instanceRef="iSlice__8__"/>
+					<portRef name="AN" instanceRef="U121"/>
+					<portRef name="B" instanceRef="U148"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[10]">
+					<portRef name="YQ" instanceRef="iSlice__3__"/>
+					<portRef name="AN" instanceRef="U115"/>
+					<portRef name="B" instanceRef="U145"/>
+				</net>
+				<net name="scl_tbuf/filter_cnt[9]">
+					<portRef name="XQ" instanceRef="iSlice__14__"/>
+					<portRef name="AN" instanceRef="U117"/>
+					<portRef name="B" instanceRef="U146"/>
+				</net>
+				<net name="n58">
+					<portRef name="Y" instanceRef="U193"/>
+					<portRef name="BY" instanceRef="iSlice__10__"/>
+				</net>
+				<net name="n60">
+					<portRef name="Y" instanceRef="U186"/>
+					<portRef name="BY" instanceRef="iSlice__9__"/>
+				</net>
+				<net name="n59">
+					<portRef name="Y" instanceRef="U190"/>
+					<portRef name="BX" instanceRef="iSlice__10__"/>
+				</net>
+				<net name="scl_tbuf/cSignal[1]">
+					<portRef name="YQ" instanceRef="iSlice__2__"/>
+					<portRef name="B" instanceRef="U138"/>
+				</net>
+				<net name="scl_tbuf/cSignal[0]">
+					<portRef name="XQ" instanceRef="iSlice__2__"/>
+					<portRef name="AN" instanceRef="U101"/>
+					<portRef name="B" instanceRef="U136"/>
+				</net>
+				<net name="n56">
+					<portRef name="Y" instanceRef="U201"/>
+					<portRef name="BX" instanceRef="iSlice__0__"/>
+				</net>
+				<net name="net_Buf-pad-scl_o">
+					<portRef name="Y" instanceRef="iSlice__28__"/>
+					<portRef name="OUT" instanceRef="scl_o"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="PAD" instanceRef="clk"/>
+				</net>
+				<net name="net_Buf-pad-clk">
+					<portRef name="GCLKOUT" instanceRef="clk"/>
+					<portRef name="IN" instanceRef="iGclk_buf__0__"/>
+				</net>
+				<net name="ena">
+					<portRef name="ena"/>
+					<portRef name="PAD" instanceRef="ena"/>
+				</net>
+				<net name="nReset">
+					<portRef name="nReset"/>
+					<portRef name="PAD" instanceRef="nReset"/>
+				</net>
+				<net name="rst">
+					<portRef name="rst"/>
+					<portRef name="PAD" instanceRef="rst"/>
+				</net>
+				<net name="scl_in">
+					<portRef name="scl_in"/>
+					<portRef name="PAD" instanceRef="scl_in"/>
+				</net>
+				<net name="scl_o">
+					<portRef name="PAD" instanceRef="scl_o"/>
+					<portRef name="scl_o"/>
+				</net>
+				<net name="scl_oen">
+					<portRef name="PAD" instanceRef="scl_oen"/>
+					<portRef name="scl_oen"/>
+				</net>
+				<net name="slave_wait">
+					<portRef name="PAD" instanceRef="slave_wait"/>
+					<portRef name="slave_wait"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="lab1" libraryRef="work_lib"/>
+</design>
+

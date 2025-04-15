@@ -1,0 +1,1 @@
+{"name":"i2c_lab2","file_lists":[{"name":"lab1_gate.v","path":"E:\\FDU\\FPGA Course\\I2C Project\\lab1_gate.v","type":"verilog"}],"target_device":"FDP3P7","settings":{"route":{"mode":"Direct Search"},"place":{"mode":"Timing Driven"}}}

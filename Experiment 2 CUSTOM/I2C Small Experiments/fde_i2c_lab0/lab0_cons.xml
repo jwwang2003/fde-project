@@ -1,0 +1,8 @@
+<design name="lab0">
+  <port name="clk" position="P77"/>
+<port name="rst" position="P151"/>
+<port name="sig" position="P145"/>
+<port name="hold" position="P150"/>
+<port name="line_val" position="P168"/>
+<port name="fet_out" position="P147"/>
+  </design>

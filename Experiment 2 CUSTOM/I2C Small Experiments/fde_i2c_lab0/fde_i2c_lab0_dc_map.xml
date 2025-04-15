@@ -1,0 +1,144 @@
+<design name="lab0">
+	<external name="cell_lib">
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="LUT2" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="CLKBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IPAD" type="MACRO">
+			<port name="PAD" direction="input"/>
+		</module>
+		<module name="OBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="OPAD" type="MACRO">
+			<port name="PAD" direction="output"/>
+		</module>
+		<module name="LOGIC_1" type="MACRO">
+			<property name="truthtable" value="|1"/>
+			<port name="LOGIC_1_PIN" direction="output"/>
+		</module>
+		<module name="LOGIC_0" type="MACRO">
+			<property name="truthtable" value="|0"/>
+			<port name="LOGIC_0_PIN" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="lab0" type="GENERIC">
+			<port name="clk" direction="input"/>
+			<port name="rst" direction="input"/>
+			<port name="sig" direction="input"/>
+			<port name="hold" direction="input"/>
+			<port name="line_val" direction="output"/>
+			<port name="fet_out" direction="output"/>
+			<contents>
+				<instance name="line_val_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="fet_out_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="L0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Buf-pad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="IBuf-clkpad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-rst" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-sig" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-hold" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="clk_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="rst_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="sig_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="hold_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-line_val" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-fet_out" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="line_val_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="fet_out_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="VCC" moduleRef="LOGIC_1" libraryRef="cell_lib"/>
+				<instance name="GND" moduleRef="LOGIC_0" libraryRef="cell_lib"/>
+				<net name="net_IBuf-clkpad-clk">
+					<portRef name="O" instanceRef="IBuf-clkpad-clk"/>
+					<portRef name="CK" instanceRef="line_val_reg"/>
+					<portRef name="CK" instanceRef="fet_out_reg"/>
+				</net>
+				<net name="net_Buf-pad-rst">
+					<portRef name="O" instanceRef="Buf-pad-rst"/>
+					<portRef name="ADR0" instanceRef="L0"/>
+					<portRef name="ADR1" instanceRef="L0"/>
+				</net>
+				<net name="net_Buf-pad-sig">
+					<portRef name="O" instanceRef="Buf-pad-sig"/>
+					<portRef name="D" instanceRef="line_val_reg"/>
+				</net>
+				<net name="net_Buf-pad-hold">
+					<portRef name="O" instanceRef="Buf-pad-hold"/>
+					<portRef name="D" instanceRef="fet_out_reg"/>
+				</net>
+				<net name="net_Buf-pad-line_val">
+					<portRef name="Q" instanceRef="line_val_reg"/>
+					<portRef name="I" instanceRef="Buf-pad-line_val"/>
+				</net>
+				<net name="net_Buf-pad-fet_out">
+					<portRef name="Q" instanceRef="fet_out_reg"/>
+					<portRef name="I" instanceRef="Buf-pad-fet_out"/>
+				</net>
+				<net name="net_L0">
+					<portRef name="O" instanceRef="L0"/>
+					<portRef name="RN" instanceRef="line_val_reg"/>
+					<portRef name="RN" instanceRef="fet_out_reg"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="I" instanceRef="Buf-pad-clk"/>
+					<portRef name="PAD" instanceRef="clk_ipad"/>
+				</net>
+				<net name="net_Buf-pad-clk">
+					<portRef name="O" instanceRef="Buf-pad-clk"/>
+					<portRef name="I" instanceRef="IBuf-clkpad-clk"/>
+				</net>
+				<net name="rst">
+					<portRef name="rst"/>
+					<portRef name="I" instanceRef="Buf-pad-rst"/>
+					<portRef name="PAD" instanceRef="rst_ipad"/>
+				</net>
+				<net name="sig">
+					<portRef name="sig"/>
+					<portRef name="I" instanceRef="Buf-pad-sig"/>
+					<portRef name="PAD" instanceRef="sig_ipad"/>
+				</net>
+				<net name="hold">
+					<portRef name="hold"/>
+					<portRef name="I" instanceRef="Buf-pad-hold"/>
+					<portRef name="PAD" instanceRef="hold_ipad"/>
+				</net>
+				<net name="line_val">
+					<portRef name="PAD" instanceRef="line_val_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-line_val"/>
+					<portRef name="line_val"/>
+				</net>
+				<net name="fet_out">
+					<portRef name="PAD" instanceRef="fet_out_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-fet_out"/>
+					<portRef name="fet_out"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="lab0" libraryRef="work_lib"/>
+</design>
+

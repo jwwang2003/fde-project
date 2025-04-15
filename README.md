@@ -220,15 +220,17 @@ Future improvements to the script may include:
 - Implementing additional display logic, such as scrolling or animation.
 - Optimizing the counter and multiplexer for larger sentence sets or higher resolution displays.
 
----
-
-#### **References:**
-- Python Documentation: https://docs.python.org/3/
-- Verilog Language Reference Manual: https://www.asic-world.com/verilog/
 
 ## Experiment 2 | Rabbit & UFDE, SMIMS Engine, FDE-CLI, & I2C
 
-During the first part of the 
+**UFDE & Rabbit**
+
+- https://github.com/0xtaruhi/Rabbit
+  - https://github.com/0xtaruhi/Rabbit/commit/f5a85e254ada268a6196613eaf1f15e321fbb745 \(PR commit for MacOS\)
+  - https://github.com/0xtaruhi/Rabbit/commit/54a4fb42e53d622cfa8285c0e8d3610b35194263
+- https://github.com/0xtaruhi/ufde-next
+  - https://github.com/0xtaruhi/ufde-next/pull/4 \(PR for VLFD driver\)
+
 
 # SMIMS Engine
 
@@ -370,7 +372,6 @@ Because every $64 \text{bits}$ put in the FIFO represents one clock cycle, each 
 
 This gives us a theoretical maximum of $23000 \cdot 256 = 5888000 \text{Hz}$ or **$5.888 \text{Mhz}$** give or take on the basis that we can saturate the full USB2 bandwidth, the SMIMS engine supports this transfer speed, and our design won't encounter any timing issues.
 
-## Batch Write
 
 # FDE-CLI
 
@@ -381,13 +382,14 @@ This gives us a theoretical maximum of $23000 \cdot 256 = 5888000 \text{Hz}$ or 
   - Supports all VLFD features \(IO_Open, IO_WriteRead, IO_Close, etc.\)
 - Project manager
 - CLI interface
+- TBD
+
+> Check FDU_CLi folder for more information
 
 # I2C
 
-## References
-- [My I2C Blog on GitBook](https://junweiwangs-organization.gitbook.io/fpga-stuff/i2c-protocol)
+Refer to my GitBook blogs:
 
-# References
-
-- 
-- https://nandland.com/tri-state-bidirectional-buffers-not-synthesizing-heres-why/
+- https://junweiwangs-organization.gitbook.io/fpga-stuff/i2c-protocol/i2c
+- https://junweiwangs-organization.gitbook.io/fpga-stuff/i2c-protocol/i2c-verilog-implementation
+- https://junweiwangs-organization.gitbook.io/fpga-stuff/i2c-fpga-implementation-and-experiments

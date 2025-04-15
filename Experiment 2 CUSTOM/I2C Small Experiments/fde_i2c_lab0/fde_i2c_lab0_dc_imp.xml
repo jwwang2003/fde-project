@@ -1,0 +1,63 @@
+<design name="lab0">
+	<external name="cell_lib">
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="INV" type="COMB">
+			<property name="truthtable" value="0"/>
+			<port name="A" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="lab0" type="GENERIC">
+			<port name="clk" direction="input"/>
+			<port name="rst" direction="input"/>
+			<port name="sig" direction="input"/>
+			<port name="hold" direction="input"/>
+			<port name="line_val" direction="output"/>
+			<port name="fet_out" direction="output"/>
+			<contents>
+				<instance name="line_val_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="fet_out_reg" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="U4" moduleRef="INV" libraryRef="cell_lib"/>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="CK" instanceRef="line_val_reg"/>
+					<portRef name="CK" instanceRef="fet_out_reg"/>
+				</net>
+				<net name="rst">
+					<portRef name="rst"/>
+					<portRef name="A" instanceRef="U4"/>
+				</net>
+				<net name="sig">
+					<portRef name="sig"/>
+					<portRef name="D" instanceRef="line_val_reg"/>
+				</net>
+				<net name="hold">
+					<portRef name="hold"/>
+					<portRef name="D" instanceRef="fet_out_reg"/>
+				</net>
+				<net name="line_val">
+					<portRef name="Q" instanceRef="line_val_reg"/>
+					<portRef name="line_val"/>
+				</net>
+				<net name="fet_out">
+					<portRef name="Q" instanceRef="fet_out_reg"/>
+					<portRef name="fet_out"/>
+				</net>
+				<net name="n1">
+					<portRef name="Y" instanceRef="U4"/>
+					<portRef name="RN" instanceRef="line_val_reg"/>
+					<portRef name="RN" instanceRef="fet_out_reg"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="lab0" libraryRef="work_lib"/>
+</design>
+

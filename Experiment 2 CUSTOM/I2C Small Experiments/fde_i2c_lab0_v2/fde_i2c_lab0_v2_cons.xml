@@ -1,0 +1,19 @@
+<design name="lab0_v2">
+  <port name="clk_cnt[0]" position="P151"/>
+<port name="clk_cnt[1]" position="P148"/>
+<port name="clk_cnt[2]" position="P150"/>
+<port name="clk_cnt[3]" position="P152"/>
+<port name="clk_cnt[4]" position="P160"/>
+<port name="clk" position="P77"/>
+<port name="rst" position="P120"/>
+<port name="nReset" position="P116"/>
+<port name="ena" position="P115"/>
+<port name="signal" position="P114"/>
+<port name="in" position="P145"/>
+<port name="out" position="P149"/>
+<port name="oen" position="P147"/>
+<port name="dout" position="P5"/>
+<port name="sSignal" position="P4"/>
+<port name="CLK" position="P185"/>
+<port name="CLK_30M" position="P140"/>
+    </design>
